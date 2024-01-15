@@ -1,6 +1,6 @@
-import create from "zustand";
+import {create} from "zustand";
 import {AccountInterface, Provider} from "starknet";
-import {getStarknet} from "@argent/get-starknet/dist";
+import { connect } from "@argent/get-starknet"
 
 interface StarknetState {
   account: AccountInterface | undefined,
@@ -21,8 +21,17 @@ export const useStarknet = create<StarknetState>((set) => ({
       set((state) => ({...state, provider: provider}))
     },
     connectWallet: async () => {
-      const starknet = getStarknet();
-      await starknet.enable();
+  // Let the user pick a wallet (on button click)
+    const starknet = connect()
+
+
+    if (!starknet) {
+      throw Error("User rejected wallet selection or silent connect found nothing")
+    }
+
+    // (optional) connect the wallet
+    await starknet?.enable()
+
       set((state) => ({...state, account: starknet.account, provider: starknet.provider}))
 
     },

@@ -1,11 +1,10 @@
 import '../styles/globals.css'
 import '../vars.css'
 import type {AppProps} from 'next/app'
-import {StarknetProvider} from '@starknet-react/core'
+import { StarknetProvider } from '../components/StarkProvider';
 import {ChakraProvider} from "@chakra-ui/react";
-import theme from '../styles/Theme'
+import theme from '../styles/Theme';
 import Navbar from "../components/Navbar";
-
 
 function MyApp({Component, pageProps}: AppProps) {
   return (
