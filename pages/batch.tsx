@@ -2,19 +2,14 @@ import {NextPage} from "next";
 import {useStarknet} from "../hooks/useStarknet";
 
 import {Button, Flex, Heading} from "@chakra-ui/react"
-import {Abi, AccountInterface, AddTransactionResponse, Contract} from 'starknet'
-import {toBN} from 'starknet/utils/number'
+import {Abi, AccountInterface, Contract} from 'starknet'
 
 import BalancesAbi from '../contracts/artifacts/abis/balances.json'
-import {defaultProvider, ec, hash} from "starknet/src/index";
-import {transformCallsToMulticallArrays} from "starknet/src/utils/transaction";
-import {getStarknet} from "@argent/get-starknet";
-import {StarknetWindowObject} from "@argent/get-starknet/dist/extension.model";
 import {useEffect, useState} from "react";
 import ActionBlock from "./action-block";
 import {Reorder} from "framer-motion"
 
-import styles from "./batch.module.css";
+import styles from "../styles/batch.module.css";
 import {ACTIONS, ActionTypes, ProtocolNames, PROTOCOLS} from "../constants/contants";
 import Invocations from "../components/Invocations";
 

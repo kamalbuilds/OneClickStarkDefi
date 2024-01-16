@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Abi, AccountInterface, AddTransactionResponse, Contract, Provider} from "starknet";
+import {Abi, AccountInterface, Contract, Provider} from "starknet";
 import BalancesAbi from "../contracts/artifacts/abis/balances.json";
 import {Button, Flex} from "@chakra-ui/react";
 
@@ -8,7 +8,7 @@ import mySwapRouter from "../contracts/artifacts/abis/myswap/router.json"
 
 import {ethers} from "ethers";
 import {JEDI_ROUTER_ADDRESS, JEDI_TOKENS, JEDI_REGISTRY_ADDRESS} from "../constants/contants";
-import {ChainId, Fetcher, Pair, Percent, Route, Token, TokenAmount, Trade} from "@jediswap/sdk";
+import {ChainId, Pair, Percent, Route, Token, TokenAmount, Trade} from "@jediswap/sdk";
 import {MySwap} from "../hooks/mySwap";
 import {JediSwap} from "../hooks/jediSwap";
 import {useStarknet} from "../hooks/useStarknet";

@@ -1,6 +1,4 @@
 // import {useStarknet} from "../hooks/useStarknet";
-import {getStarknet} from "@argent/get-starknet/dist";
-import {ReactNode} from 'react';
 import {
   Box,
   Flex,
@@ -74,7 +72,7 @@ const Navbar = () => {
               fontWeight='extrabold'
               isTruncated
             >
-              GaslessStarkDefi
+              OneClickStarkDefi
             </Heading>
             <HStack
               as={'nav'}

@@ -20,7 +20,7 @@ const Home: NextPage = () => {
             fontWeight='extrabold'
             isTruncated
           >
-            GaslessStarkDefi
+            OneClickStarkDefi
           </Heading>
         </Flex>
         <Flex
@@ -78,7 +78,7 @@ const Home: NextPage = () => {
             </Button>
           </Link>
 
-          <Link href={"/combos"} passHref>
+          <Link href={"/batch"} passHref>
             <Button
               bg='transparent'
               width={"145px"}

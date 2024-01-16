@@ -1,28 +1,11 @@
-import {InjectedConnector, useStarknet} from "@starknet-react/core";
-import {Button, Heading} from "@chakra-ui/react";
+import { Heading} from "@chakra-ui/react";
 
-
+import { useAccount } from "@starknet-react/core";
 
 const Account = () => {
-  const { account, connect } = useStarknet()
-  return (
-    <div>
-      <Heading>Account</Heading>
-      <div>
-        <p>Connected Account: {account}</p>
-      </div>
-      {InjectedConnector.ready ? (
-        <div>
-          <Button onClick={() => connect(new InjectedConnector())}>Connect Argent-X</Button>
-        </div>
-      ) : (
-        <div>
-          <p>
-            <a href="https://github.com/argentlabs/argent-x">Download Argent-X</a>
-          </p>
-        </div>
-      )}
-    </div>
-  )
+  const { account, address, status } = useAccount();
+
+  if (status === "disconnected") return <p>Disconnected</p>;
+  return <p>Account: {address}</p>;
 }
 export default Account

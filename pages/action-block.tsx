@@ -1,4 +1,4 @@
-import styles from "./action-block.module.css";
+import styles from "../styles/action-block.module.css";
 import {Input} from "@chakra-ui/input";
 // @ts-ignore
 import {Btc, Usdt} from 'react-cryptocoins';
