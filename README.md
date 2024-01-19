@@ -4,6 +4,8 @@ Tagline: "OneClickDefionStark: Streamline Your Starknet Defi Journey with Email 
 
 Description: OneClickDefiStark is a platform that allows users to connect using their email addresses, powered by account abstraction, and navigate the Starknet Defi space seamlessly. It enables users to aggregate and batch multiple transactions into a single transaction across different Defi protocols on Starknet, currently supporting Jedi Swap and MySwap.
 
+## Live Video ->
+
 Features:
 
 1. **Email-Powered Wallets**: OneClickDefiStark simplifies the connection process by allowing users to connect using their email addresses, eliminating the need for complex wallet addresses.
