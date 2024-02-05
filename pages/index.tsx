@@ -72,6 +72,7 @@ const Home: NextPage = () => {
               borderRadius='35px'
               border='1px'
               borderColor='#FFFF'
+              color="#F0C3EC"
               _hover={{bgGradient: 'linear(to-r, #F0C3EC, #7F6AFF)'}}
             >
               Explore protocols
@@ -86,6 +87,7 @@ const Home: NextPage = () => {
               borderRadius='35px'
               border='1px'
               borderColor='#FFFF'
+              color="#F0C3EC"
               _hover={{bgGradient: 'linear(to-l, #F0C3EC, #7F6AFF)'}}
             >
               Gasless batch
