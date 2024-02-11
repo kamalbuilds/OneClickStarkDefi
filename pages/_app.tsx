@@ -1,6 +1,23 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import '../styles/globals.css'
+import '../vars.css'
+import type {AppProps} from 'next/app'
+import { StarknetProvider } from '../components/StarkProvider';
+import {ChakraProvider} from "@chakra-ui/react";
+import theme from '../styles/Theme';
+import Navbar from "../components/Navbar";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function MyApp({Component, pageProps}: AppProps) {
+  return (
+
+      <ChakraProvider theme={theme}>
+        <StarknetProvider>
+          <div className={"customBackground"}>
+            <Navbar/>
+            <Component {...pageProps} />
+          </div>
+        </StarknetProvider>
+      </ChakraProvider>
+  )
 }
+
+export default MyApp
