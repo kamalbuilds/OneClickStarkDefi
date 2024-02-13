@@ -5,6 +5,7 @@ import type { AccountInterface } from "starknet";
 import { connect } from "get-starknet";
 import { executeSwap, fetchQuotes, Quote } from "@avnu/avnu-sdk";
 import { parseUnits } from 'ethers';
+import { useStarknet } from "../hooks/useStarknet";
 
 // @ts-ignore
 import {Btc, Usdt} from 'react-cryptocoins';
@@ -30,19 +31,20 @@ const ActionBlock = (props: any) => {
 
   const [amountFrom, setAmountFrom] = useState("");
   const [amountTo, setAmountTo] = useState("");
-  const [ account, setAccount ] = useState<AccountInterface>()
+  // const [ account, setAccount ] = useState<AccountInterface>()
   const [ sellAmount, setSellAmount ] = useState<string>()
   const [ quotes, setQuotes ] = useState<Quote[]>([])
   const [ loading, setLoading ] = useState<boolean>(false)
   const [ errorMessage, setErrorMessage ] = useState<string>()
   const [ successMessage, setSuccessMessage ] = useState<string>()
+  const { account, provider, setAccount, setProvider, connectWallet, disconnect } = useStarknet();
 
   const handleConnect = async () => {
-    const starknet = await connect();
-    if (!starknet) return;
-    await starknet.enable();
-    if (starknet.isConnected && starknet.provider && starknet.account.address) {
-      setAccount(starknet.account)
+    // const starknet = await connect();
+    // if (!starknet) return;
+    // await starknet.enable();
+    if (account.address) {
+      setAccount(account)
     }
   }
 
@@ -90,7 +92,7 @@ const ActionBlock = (props: any) => {
   }, [x]);
   console.log(quotes)
 
-  if (account) {
+  if (!account) {
     return <button onClick={handleConnect}>Connect Wallet</button>
   }
 
