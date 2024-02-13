@@ -1,40 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## OneClickStarkDefi
 
-## Getting Started
+Tagline: "OneClickStarkDefi: Streamline Your Starknet Defi Journey with Email Wallets (Powered Account Abstraction) and Multi-Protocol Transaction Aggregation"
 
-First, run the development server:
+Description: OneClickStarkDefi is a platform that allows users to connect using their email addresses, powered by account abstraction, and navigate the Starknet Defi space seamlessly. It enables users to aggregate and batch multiple transactions into a single transaction across different Defi protocols on Starknet, currently supporting Jedi Swap and MySwap.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Video ->
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Features:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. **Email-Powered Wallets**: OneClickDefionStark simplifies the connection process by allowing users to connect using their email addresses, eliminating the need for complex wallet addresses.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+2. **Multi-Protocol Transaction Aggregation**: Users can aggregate and batch multiple transactions into a single transaction, reducing gas fees and streamlining their Defi experience.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. **Currently Supported Defi Protocols**: OneClickDefiStark currently supports Jedi Swap , AAVNE and MySwap, with plans to expand to additional protocols in the future.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Seamless Navigation**: The platform provides a user-friendly interface that allows users to easily navigate the Starknet Defi space, making it accessible to a wider audience.
 
-## Learn More
+5. **Scalability**: OneClickDefiStark is designed to handle multiple transactions and users, ensuring a smooth and efficient experience for all users.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+By using OneClickStarkDefi, users can enjoy a more streamlined and efficient Defi experience on Starknet, with the convenience of connecting using their email addresses and aggregating multiple transactions across multiple defi protocols into a single transaction.
