@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { Button, Flex } from '@chakra-ui/react';
 import ActionBlock from '../components/action-block';
-import { ACTIONS, ProtocolNames } from '../constants/contants';
+import { ACTIONS, ProtocolNames } from '../constants/constants';
 
 import styles from '../styles/batch.module.css';
 import {Reorder} from "framer-motion";

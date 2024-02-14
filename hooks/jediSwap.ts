@@ -1,7 +1,7 @@
 import {DexCombo} from "../constants/interfaces";
 import {Abi, AccountInterface, Contract, Provider} from "starknet";
 import mySwapRouter from "../contracts/artifacts/abis/myswap/router.json";
-import {JEDI_REGISTRY_ADDRESS, JEDI_FACTORY_ADDRESS} from "../constants/contants";
+import {JEDI_REGISTRY_ADDRESS, JEDI_FACTORY_ADDRESS} from "../constants/constants";
 import {ethers} from "ethers";
 import {useStarknet} from "./useStarknet";
 import {BigintIsh, ChainId, Pair, Percent, Token, TokenAmount, Trade} from "@jediswap/sdk";

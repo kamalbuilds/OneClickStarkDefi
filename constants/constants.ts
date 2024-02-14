@@ -132,29 +132,37 @@ export const AVNU_TOKENS = [
 
 export const JEDI_TOKENS = [
   {
-    name: 'J23FEB0',
-    address: '0x04bc8ac16658025bff4a3bd0760e84fcf075417a4c55c6fae716efdd8f1ed26c',
-    decimals: 18,
-    symbol: 'J23FEB0',
+    "name": "Wrapped BTC",
+    "address": "0x12d537dc323c439dc65c976fad242d5610d27cfb5f31689a0a319b8be7f3d56",
+    "symbol": "WBTC",
+    "decimals": 8,
+    "chainId": "0x534e5f474f45524c49",
+    "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599/logo.png"
   },
   {
-    name: 'J23FEB1',
-    address: '0x05f405f9650c7ef663c87352d280f8d359ad07d200c0e5450cb9d222092dc756',
-    decimals: 18,
-    symbol: 'J23FEB1',
+    "name": "Dai Stablecoin",
+    "address": "0x03e85bfbb8e2a42b7bead9e88e9a1b19dbccf661471061807292120462396ec9",
+    "symbol": "DAI",
+    "decimals": 18,
+    "chainId": "0x534e5f474f45524c49",
+    "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x6B175474E89094C44Da98b954EedeAC495271d0F/logo.png"
   },
   {
-    name: 'J23FEB2',
-    address: '0x024da028e8176afd3219fbeafb17c49624af9b86dcbe81007ae40d93f741617d',
-    decimals: 18,
-    symbol: 'J23FEB2',
+    "name": "USDCoin",
+    "address": "0x005a643907b9a4bc6a55e9069c4fd5fd1f5c79a22470690f75556c4736e34426",
+    "symbol": "USDC",
+    "decimals": 6,
+    "chainId": "0x534e5f474f45524c49",
+    "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48/logo.png"
   },
   {
-    name: 'J23FEB3',
-    address: '0x01ca5dedf1612b1ffb035e838ac09d70e500d22cf9cd0de4bebcef8553506fdb',
-    decimals: 18,
-    symbol: 'J23FEB3',
-  },
+    "name": "Tether USD",
+    "address": "0x386e8d061177f19b3b485c20e31137e6f6bc497cc635ccdfcab96fadf5add6a",
+    "symbol": "USDT",
+    "decimals": 6,
+    "chainId": "0x534e5f474f45524c49",
+    "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xdAC17F958D2ee523a2206206994597C13D831ec7/logo.png"
+  }
 ];
 
 export const MY_SWAP_ROUTER_ADDRESS = '0x071faa7d6c3ddb081395574c5a6904f4458ff648b66e2123b877555d9ae0260e';

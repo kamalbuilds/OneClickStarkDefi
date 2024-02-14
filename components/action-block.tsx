@@ -6,12 +6,12 @@ import { executeSwap, fetchQuotes, Quote } from "@avnu/avnu-sdk";
 import { parseUnits } from 'ethers';
 import { useStarknet } from "../hooks/useStarknet";
 import { Select } from '@chakra-ui/react';
-import { ACTIONS, ProtocolNames } from '../constants/contants';
+import { ACTIONS, ProtocolNames } from '../constants/constants';
 // @ts-ignore
 import {Btc, Usdt} from 'react-cryptocoins';
 import TokenChooser from "./token-chooser";
 import {ArrowDownIcon} from "@chakra-ui/icons";
-import {AVNU_TOKENS, SELECTABLE_TOKENS , JEDI_TOKENS} from "../constants/contants";
+import {AVNU_TOKENS, SELECTABLE_TOKENS , JEDI_TOKENS} from "../constants/constants";
 import { ChangeEvent, useEffect, useState} from "react";
 import {motion, useMotionValue} from "framer-motion"
 

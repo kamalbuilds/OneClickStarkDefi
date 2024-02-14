@@ -1,5 +1,5 @@
 import {DexCombo} from "../constants/interfaces";
-import { MY_SWAP_ROUTER_ADDRESS} from "../constants/contants";
+import { MY_SWAP_ROUTER_ADDRESS} from "../constants/constants";
 import {ethers} from "ethers";
 import {Abi, AccountInterface, Contract, Provider} from "starknet";
 import mySwapRouter from "../contracts/artifacts/abis/myswap/router.json";

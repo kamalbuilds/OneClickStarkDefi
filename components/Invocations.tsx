@@ -7,7 +7,7 @@ import {Button, Flex} from "@chakra-ui/react";
 import mySwapRouter from "../contracts/artifacts/abis/myswap/router.json"
 
 import {ethers} from "ethers";
-import {JEDI_FACTORY_ADDRESS, JEDI_TOKENS, JEDI_REGISTRY_ADDRESS} from "../constants/contants";
+import {JEDI_FACTORY_ADDRESS, JEDI_TOKENS, JEDI_REGISTRY_ADDRESS} from "../constants/constants";
 import {ChainId, Pair, Percent, Route, Token, TokenAmount, Trade} from "@jediswap/sdk";
 import {MySwap} from "../hooks/mySwap";
 import {JediSwap} from "../hooks/jediSwap";
