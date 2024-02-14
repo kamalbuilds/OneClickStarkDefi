@@ -21,8 +21,8 @@ export class MySwap implements DexCombo {
 
   public async swap(account: AccountInterface, provider: Provider, tokenFrom: string, tokenTo: string, amountIn: string, amountOut: string): Promise<any> {
     //TODO calculate amountOut manually?
-    const tokenFromDec = ethers.BigNumber.from(tokenFrom).toBigInt().toString();
-    const tokenToDec = ethers.BigNumber.from(tokenTo).toBigInt().toString();
+    const tokenFromDec = BigInt(tokenFrom).toString();
+    const tokenToDec = BigInt(tokenTo).toString();
     const poolId = await this.findPool(tokenFromDec, tokenToDec);
     console.log(poolId)
 

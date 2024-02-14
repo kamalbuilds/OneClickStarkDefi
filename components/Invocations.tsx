@@ -70,8 +70,8 @@ const Invocations = () => {
     const amountTo = "3316"; //not necessary anymore for exact_tokens_for_tokens
     const tokenFrom = "0x04bc8ac16658025bff4a3bd0760e84fcf075417a4c55c6fae716efdd8f1ed26c"; //jedifeb0
     const tokenTo = "0x05f405f9650c7ef663c87352d280f8d359ad07d200c0e5450cb9d222092dc756"; //jedifeb1
-    const tokenFromDec = ethers.BigNumber.from(tokenFrom).toBigInt().toString()
-    const tokenToDec = ethers.BigNumber.from(tokenTo).toBigInt().toString()
+    const tokenFromDec = BigInt(tokenFrom).toString()
+    const tokenToDec = BigInt(tokenTo).toString()
 
     const jediSwap:JediSwap = JediSwap.getInstance();
     //Fetches liq pool address for tokenA and tokenB
@@ -111,7 +111,7 @@ const Invocations = () => {
     //   ]
 
     const testErc20Adress = "0x7394cbe418daa16e42b87ba67372d4ab4a5df0b05c6e554d158458ce245bc10"
-    const testErc20Dec = ethers.BigNumber.from(testErc20Adress).toBigInt().toString()
+    const testErc20Dec = BigInt(testErc20Adress).toString()
     const poolNumber = "4";
     // const poolInfo = await getPoolInfo(poolNumber); //4 is for test to tUSDC
     //TODO compute output amt here from pool values

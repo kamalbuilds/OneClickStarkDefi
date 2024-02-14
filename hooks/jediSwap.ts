@@ -54,20 +54,20 @@ export class JediSwap implements DexCombo {
 
     //We need these but idk why tbh
     const from = new Token(
-      ChainId.GÖRLI,
+      ChainId.SN_GOERLI,
       tokenFrom,
       18,
       't0'
     )
     const to = new Token(
-      ChainId.GÖRLI,
+      ChainId.SN_GOERLI,
       tokenTo,
       18,
       't1'
     )
 
-    const tokenFromDec = ethers.BigNumber.from(tokenFrom).toBigInt().toString()
-    const tokenToDec = ethers.BigNumber.from(tokenTo).toBigInt().toString()
+    const tokenFromDec = BigInt(tokenFrom).toString();
+    const tokenToDec = BigInt(tokenTo).toString();
 
     const liquidityPool = await this.findPool(provider, tokenFromDec, tokenToDec);
     if(!liquidityPool) return undefined;
@@ -81,7 +81,7 @@ export class JediSwap implements DexCombo {
       "0",
       trade.pathLength,
       trade.pathAddresses,
-      ethers.BigNumber.from(account.address).toBigInt().toString(),
+      BigInt(account.address).toString(),
       Math.floor((Date.now() / 1000) + 3600).toString() // default timeout is 1 hour
     ].flatMap((x) => x);
 
@@ -90,7 +90,7 @@ export class JediSwap implements DexCombo {
         contractAddress: tokenFrom,
         entrypoint: 'approve',
         calldata: [
-          ethers.BigNumber.from(JEDI_ROUTER_ADDRESS).toBigInt().toString(), // router address decimal
+          BigInt(JEDI_ROUTER_ADDRESS).toString(), // router address decimal
           amountIn,
           "0"
         ]
@@ -124,7 +124,7 @@ export class JediSwap implements DexCombo {
     const liqPoolToken0 = await provider.callContract({
       contractAddress: liquidityPoolForTokens,
       entrypoint: "token0",
-    }).then((res) => ethers.BigNumber.from(res.result[0]).toString())
+    }).then((res) => BigInt(res.result[0]).toString())
     if (!liqPoolToken0) return undefined
 
     // get reserves for the tokenA tokenB liq pool
@@ -157,10 +157,10 @@ export class JediSwap implements DexCombo {
     //TODO dynamic slippage value here
     const slippageTolerance = new Percent('50', '10000'); // 0.5%
     const amountOutMin = trade.minimumAmountOut(slippageTolerance).raw;
-    const amountOutMinDec = ethers.BigNumber.from(amountOutMin.toString()).toBigInt()
+    const amountOutMinDec = BigInt(amountOutMin.toString())
 
     const path = trade.route.path;
-    const pathAddresses = path.map((token: Token) => ethers.BigNumber.from(token.address.toString()).toBigInt().toString());
+    const pathAddresses = path.map((token: Token) => BigInt(token.address.toString()).toString());
     return {
       pathLength: path.length.toString(),
       pathAddresses: pathAddresses,

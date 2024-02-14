@@ -6,7 +6,7 @@ import {Abi, AccountInterface, Contract} from 'starknet'
 
 import BalancesAbi from '../contracts/artifacts/abis/balances.json'
 import {useEffect, useState} from "react";
-import ActionBlock from "./action-block";
+import ActionBlock from "../components/action-block";
 import {Reorder} from "framer-motion"
 
 import styles from "../styles/batch.module.css";

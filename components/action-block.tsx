@@ -9,7 +9,7 @@ import { useStarknet } from "../hooks/useStarknet";
 
 // @ts-ignore
 import {Btc, Usdt} from 'react-cryptocoins';
-import TokenChooser from "../components/token-chooser";
+import TokenChooser from "./token-chooser";
 import {ArrowDownIcon} from "@chakra-ui/icons";
 import {SELECTABLE_TOKENS} from "../constants/contants";
 import { ChangeEvent, useEffect, useState} from "react";
@@ -29,8 +29,10 @@ const ActionBlock = (props: any) => {
   const [selectedTokenFrom, setSelectedTokenFrom] = useState(SELECTABLE_TOKENS[0]);
   const [selectedTokenTo, setSelectedTokenTo] = useState(SELECTABLE_TOKENS[1]);
 
+  console.log(selectedTokenFrom.address, selectedTokenTo.address);
   const [amountFrom, setAmountFrom] = useState("");
   const [amountTo, setAmountTo] = useState("");
+
   // const [ account, setAccount ] = useState<AccountInterface>()
   const [ sellAmount, setSellAmount ] = useState<string>()
   const [ quotes, setQuotes ] = useState<Quote[]>([])
@@ -48,6 +50,8 @@ const ActionBlock = (props: any) => {
     }
   }
 
+  console.log(selectedTokenFrom, selectedTokenTo,"s")
+
   const handleChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     if (!account) return;
     setErrorMessage('')
@@ -55,8 +59,8 @@ const ActionBlock = (props: any) => {
     setSellAmount(event.target.value);
     setLoading(true)
     const params = {
-      sellTokenAddress: ethAddress,
-      buyTokenAddress: usdcAddress,
+      sellTokenAddress: selectedTokenFrom.address,
+      buyTokenAddress: selectedTokenTo.address,
       sellAmount: parseUnits(event.target.value, 18),
       takerAddress: account.address,
       size: 1,
