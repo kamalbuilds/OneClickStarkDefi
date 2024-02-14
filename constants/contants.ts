@@ -113,12 +113,6 @@ export const SELECTABLE_TOKENS = [
     decimals: 18,
     symbol: 'ETH',
   },
-  {
-    name: 'DAO',
-    address: '',
-    decimals: 18,
-    symbol: 'DAO',
-  },
 ];
 
 export const AVNU_TOKENS = [

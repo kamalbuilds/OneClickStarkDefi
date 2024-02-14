@@ -23,7 +23,9 @@ export const useStarknet = create<StarknetState>((set) => ({
   connectWallet: async () => {
     try {
       // Let the user pick a wallet (on button click)
-      const starknet = await connect(); // Use await to resolve the promise
+      const starknet = await connect(
+        { modalMode : "alwaysAsk"}
+      ); // Use await to resolve the promise
       console.log(starknet,"starkl")
       if (!starknet) {
         throw new Error("User rejected wallet selection or silent connect found nothing");

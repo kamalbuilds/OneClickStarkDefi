@@ -1,11 +1,13 @@
 import {Button, Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react";
 //@ts-ignore
-import {Btc, Usdt} from 'react-cryptocoins';
+import {Btc, Usdt } from 'react-cryptocoins';
 import {inspect} from "util";
 import styles  from './token-chooser.module.css';
 import dynamic from "next/dynamic";
 
 const TokenChooser = (props: any) => {
+
+  console.log(`react-cryptocoins/dist/icons/${props.selectedToken.symbol}`,"symbok");
 
   const DynamicIconComponent: any = dynamic(() => import(`react-cryptocoins/dist/icons/${props.selectedToken.symbol}`))
 
