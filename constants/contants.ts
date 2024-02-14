@@ -41,6 +41,11 @@ export const PROTOCOLS: { [key in keyof typeof ProtocolNames]?: any} = {
     address: '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2',
     abi: []
   },
+  [ProtocolNames.AAVNU]: {
+    name: 'AAVNU',
+    address: '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A12',
+    abi: []
+  },
 }
 
 

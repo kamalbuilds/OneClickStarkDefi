@@ -9,8 +9,6 @@ const TokenChooser = (props: any) => {
 
   const DynamicIconComponent: any = dynamic(() => import(`react-cryptocoins/dist/icons/${props.selectedToken.symbol}`))
 
-
-
   return(
     <Menu>
       <MenuButton as={Button} minWidth={"6rem"} height={"3rem"}>
