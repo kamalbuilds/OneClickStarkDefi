@@ -1,24 +1,40 @@
-import {NextPage} from "next";
+
+// Batch component
+
+import React, { useState } from 'react';
+import { Button, Flex } from '@chakra-ui/react';
+import ActionBlock from '../components/action-block';
+import { ACTIONS, ProtocolNames } from '../constants/contants';
+
+import styles from '../styles/batch.module.css';
+import {Reorder} from "framer-motion";
 import {useStarknet} from "../hooks/useStarknet";
-
-import {Button, Flex, Heading} from "@chakra-ui/react"
-import {Abi, AccountInterface, Contract} from 'starknet'
-
-import BalancesAbi from '../contracts/artifacts/abis/balances.json'
-import {useEffect, useState} from "react";
-import ActionBlock from "../components/action-block";
-import {Reorder} from "framer-motion"
-
-import styles from "../styles/batch.module.css";
-import {ACTIONS, ActionTypes, ProtocolNames, PROTOCOLS} from "../constants/contants";
-import Invocations from "../components/Invocations";
-
-
-const Batch: NextPage = () => {
-
+const Batch = () => {
   const {account, setAccount, provider, setProvider, connectWallet, disconnect} = useStarknet();
-  const [items, setItems] = useState([0, 1, 2, 3])
+  const [actionBlocks, setActionBlocks] = useState([
+    { id: 1, action: Object.keys(ACTIONS)[0], protocol: Object.keys(ProtocolNames)[0] },
+  ]);
 
+  const addActionBlock = () => {
+    const newBlock = {
+      id: actionBlocks.length + 1,
+      action: Object.keys(ACTIONS)[0], // Default to the first action
+      protocol: Object.keys(ProtocolNames)[0], // Default to the first protocol
+    };
+    setActionBlocks([...actionBlocks, newBlock]);
+  };
+
+  const removeActionBlock = (id) => {
+    const updatedBlocks = actionBlocks.filter((block) => block.id !== id);
+    setActionBlocks(updatedBlocks);
+  }
+
+  const updateActionBlock = (id, field, value) => {
+    const updatedBlocks = actionBlocks.map((block) =>
+      block.id === id ? { ...block, [field]: value } : block
+    );
+    setActionBlocks(updatedBlocks);
+  };
 
   const renderDisconnected = () => {
     return (
@@ -29,46 +45,46 @@ const Batch: NextPage = () => {
       </Flex>
     )
   }
-
-
   const renderConnected = () => {
-    return (
-      <div className={styles.container}>
-        <Invocations/>
-
-
+  return (
+    <div className={styles.container}>
         <Reorder.Group
           as="ul"
           className={styles.actionsWrapper}
           axis="x"
-          values={items}
-          onReorder={setItems}
+          values={actionBlocks}
+          onReorder={setActionBlocks}
           layoutScroll
           style={{overflowX: "scroll"}}
         >
-          {items.map((item) => (
-            <Reorder.Item key={item} value={item}>
-              <div className={styles.blockWrapper}>
-                <ActionBlock
-                  actionName={ACTIONS[ActionTypes.SWAP].name}
-                  protocolName={PROTOCOLS[ProtocolNames.JEDISWAP].name}
-                  item={item}
-                />
-              </div>
-            </Reorder.Item>
-          ))}
-        </Reorder.Group>
+      {actionBlocks.map((block) => (
+        <Reorder.Item key={block.id} value={block}>
+        <ActionBlock
+          key={block.id}
+          actionName={ACTIONS[block.action]?.name}
+          protocolName={ProtocolNames[block.protocol]}
+          onActionChange={(action) => updateActionBlock(block.id, 'action', action)}
+          onProtocolChange={(protocol) => updateActionBlock(block.id, 'protocol', protocol)}
+        />
+        </Reorder.Item>
+      ))}
+      </Reorder.Group>
+      <Button onClick={addActionBlock} mt="8">
+        ➕ Action Block
+      </Button>
+      <Button onClick={() => removeActionBlock(actionBlocks.length)} mt="8">
+        ❌ Latest Block
+      </Button>
       </div>
+ )
+}
 
-    )
-  }
-
-  return (
-    <>
-      {account && renderConnected()}
-      {!account && renderDisconnected()}
-    </>
-  )
+return (
+  <>
+    {account && renderConnected()}
+    {!account && renderDisconnected()}
+  </>
+)
 
 }
 export default Batch;
