@@ -118,7 +118,7 @@ export const SELECTABLE_TOKENS = [
 export const AVNU_TOKENS = [
   {
     name: 'ETH',
-    address: '0x49d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7',
+    address: '0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7',
     decimals: 18,
     symbol: 'ETH',
   },
@@ -128,6 +128,18 @@ export const AVNU_TOKENS = [
     decimals: 6,
     symbol: 'USDC',
   },
+  {
+    name: 'DAI',
+    address: '0x03e85bfbb8e2a42b7bead9e88e9a1b19dbccf661471061807292120462396ec9',
+    decimals: 18,
+    symbol: 'DAI',
+  },
+  {
+    name: 'Wrapped BTC',
+    address: '0x12d537dc323c439dc65c976fad242d5610d27cfb5f31689a0a319b8be7f3d56',
+    decimals: 8,
+    symbol: 'wBTC',
+  }
 ];
 
 export const JEDI_TOKENS = [

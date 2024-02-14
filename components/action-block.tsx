@@ -69,7 +69,7 @@ console.log(protocolName, "protocolName");
     const params = {
       sellTokenAddress: selectedTokenFrom.address,
       buyTokenAddress: selectedTokenTo.address,
-      sellAmount: parseUnits(event.target.value, 18),
+      sellAmount: parseUnits(event.target.value, selectedTokenFrom.decimals),
       takerAddress: account.address,
       size: 1,
     }
