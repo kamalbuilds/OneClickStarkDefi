@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@argent/get-starknet": "^6.4.7",
     "@avnu/avnu-sdk": "1.2.4",
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",

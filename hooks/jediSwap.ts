@@ -1,7 +1,7 @@
 import {DexCombo} from "../constants/interfaces";
 import {Abi, AccountInterface, Contract, Provider} from "starknet";
 import mySwapRouter from "../contracts/artifacts/abis/myswap/router.json";
-import {JEDI_REGISTRY_ADDRESS, JEDI_ROUTER_ADDRESS} from "../constants/contants";
+import {JEDI_REGISTRY_ADDRESS, JEDI_FACTORY_ADDRESS} from "../constants/contants";
 import {ethers} from "ethers";
 import {useStarknet} from "./useStarknet";
 import {BigintIsh, ChainId, Pair, Percent, Token, TokenAmount, Trade} from "@jediswap/sdk";
@@ -90,13 +90,13 @@ export class JediSwap implements DexCombo {
         contractAddress: tokenFrom,
         entrypoint: 'approve',
         calldata: [
-          BigInt(JEDI_ROUTER_ADDRESS).toString(), // router address decimal
+          BigInt(JEDI_FACTORY_ADDRESS).toString(), // router address decimal
           amountIn,
           "0"
         ]
       },
       {
-        contractAddress: JEDI_ROUTER_ADDRESS,
+        contractAddress: JEDI_FACTORY_ADDRESS,
         entrypoint: 'swap_exact_tokens_for_tokens',
         calldata: swapCallData
       }
